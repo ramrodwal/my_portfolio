@@ -16,13 +16,16 @@
         <div class="container">
             <nav>
                 <img src="images/logo.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+
             </nav>
             <div class="header-text">
                 <p>Full Stack developer</p>
@@ -31,7 +34,7 @@
         </div>
     </div>
 
-    <!-- ------------about------------------------- -->
+    <!-- ---------------------------------------------about---------------------------------------------------------------- -->
 
     <div id="about">
         <div class="container">
@@ -118,32 +121,32 @@
             <div class="work-list">
 
                 <div class="work">
-                    <img src="images/work-1.png" >
+                    <img src="images/work-1.png">
                     <div class="layer">
                         <h3>Social Media App</h3>
                         <p>The app connects you to the talented people around the world.
                             Download it from playstore.</p>
-                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
 
                 <div class="work">
-                    <img src="images/work-2.png" >
+                    <img src="images/work-2.png">
                     <div class="layer">
                         <h3>Music App</h3>
                         <p>The app connects you to the talented people around the world.
                             Download it from playstore.</p>
-                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
 
                 <div class="work">
-                    <img src="images/work-3.png" >
+                    <img src="images/work-3.png">
                     <div class="layer">
                         <h3>Online shopping App</h3>
                         <p>The app connects you to the talented people around the world.
                             Download it from playstore.</p>
-                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
 
@@ -155,7 +158,7 @@
 
     </div>
 
-<!-- ---------------------------------------------------contact-------------------------------------------------------------- -->
+    <!-- ---------------------------------------------------contact-------------------------------------------------------------- -->
 
     <div id="contact">
 
@@ -164,7 +167,7 @@
             <div class="row">
 
                 <div class="contact-left">
-                    
+
                     <h1 class="sub-title">Contact Me</h1>
                     <p><i class="fa-solid fa-paper-plane"></i>rrodwal22@gmail.com</p>
                     <p><i class="fa-solid fa-square-phone"></i>8109790474</p>
@@ -172,23 +175,32 @@
                     <div class="social-icons">
                         <a href="https://www.facebook.com/ram.rodwal/"><i class="fa-brands fa-facebook"></i></a>
                         <a href="https://www.facebook.com/ram.rodwal/"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/ram-rodwal-607970192/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/ram-rodwal-607970192/"><i
+                                class="fa-brands fa-linkedin"></i></a>
                         <a href="https://github.com/ramrodwal"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <a href="https://iiitbac-my.sharepoint.com/personal/ram_rodwal_iiitb_ac_in/_layouts/15/onedrive.aspx?login_hint=Ram%2ERodwal%40iiitb%2Eac%2Ein&id=%2Fpersonal%2Fram%5Frodwal%5Fiiitb%5Fac%5Fin%2FDocuments%2FMTECH%20IIITB%2Fdocuments%2FMT2022087%2Epdf&parent=%2Fpersonal%2Fram%5Frodwal%5Fiiitb%5Fac%5Fin%2FDocuments%2FMTECH%20IIITB%2Fdocuments" download class="btn btn2">Download CV</a>
+                    <a href="images/ram_rodwal_resume-1.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form action="">
+                    <form name="submit-to-google-sheet">
 
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit">Submit</button>
+                        <button type="submit" class="btn btn2">Submit</button>
 
                     </form>
+                    <span id="msg"></span>
                 </div>
 
             </div>
+
+        </div>
+
+        <div class="copyright">
+
+            <p>Copyright <i class="fa-regular fa-copyright"></i></i> Ram. Made with <i class="fa-solid fa-heart"></i>
+            </p>
 
         </div>
 
@@ -214,6 +226,49 @@
         }
 
     </script>
+
+    <script>
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+
+            sidemenu.style.right = "0";
+
+        }
+
+        function closemenu() {
+
+            sidemenu.style.right = "-200px";
+
+        }
+
+
+    </script>
+
+    <script>
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz6yAXQXgdQZUQ1t9s9hrxreNsN7KaNb4XyzbAa0gqoxBqWBaIeWtFMBKFzHd0TR_A5/exec'
+        const form = document.forms['submit-to-google-sheet']
+        
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset();
+
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+
+    </script>
+
 
 </body>
 
